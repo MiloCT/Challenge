@@ -24,9 +24,9 @@ class ViewController: UIViewController,UITextFieldDelegate {
         login.backgroundColor = UIColor.init(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
         self.view.addSubview(login)
         
-        label.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        label.frame = CGRect(x: 0, y: 0, width: fullScrenn.width * 0.9, height: 100)
         label.center = CGPoint(x: fullScrenn.width * 0.5, y: fullScrenn.height * 0.3)
-        label.backgroundColor = UIColor.lightGray
+//        label.backgroundColor = UIColor.lightGray
         label.font = label.font.withSize(20)
         label.textAlignment = .center
         self.view.addSubview(label)
@@ -80,7 +80,11 @@ class ViewController: UIViewController,UITextFieldDelegate {
                 let acc = (alertController.textFields?.first)! as UITextField
                 let password = (alertController.textFields?.last)! as UITextField
                 let temp = String(password.text!)
-                if  temp == mypassword {
+                
+                if acc.text!.isEmpty || password.text!.isEmpty{
+                   self.label.text = "請輸入完整的帳號及密碼缺一不可"
+                }
+                else if temp == mypassword {
                     self.label.textColor = .blue
                     self.label.text = "密碼正確"
                 }
@@ -94,6 +98,5 @@ class ViewController: UIViewController,UITextFieldDelegate {
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)
     }
-    
 }
 
