@@ -26,7 +26,7 @@
 * 按下按鈕後計算結果，將結果顯示在 Label 上
 * 判斷輸入框是否為可用的數字
 
-![image](https://github.com/MiloCT/Challenge/blob/master/3.gif)
+![image](https://github.com/MiloCT/Challenge/blob/master/3(keyboard).gif)
 
 ## 挑戰#4 （ 折扣計算機 ）
 
@@ -43,4 +43,4 @@
 * 判斷輸入字元是否與密碼相同
 * 如果相同則 Label 顯示 “成功”，若是錯誤顯示 “失敗”
 
-![image](https://github.com/MiloCT/Challenge/blob/master/5.gif)
+![image](https://github.com/MiloCT/Challenge/blob/master/5(keyboard).gif)
