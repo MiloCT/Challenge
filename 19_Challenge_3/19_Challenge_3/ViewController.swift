@@ -158,23 +158,45 @@ class ViewController: UIViewController, UITextFieldDelegate{
 //        }
         if labelTop.text != nil,
             labelBotton.text != nil,
-            labelHeight.text != nil{
-            top = Int(labelTop.text!)!
-            labelTop.text = "上底:\(top!)"
-            botton = Int(labelBotton.text!)!
-            labelBotton.text = "下底:\(botton!)"
-            height = Int(labelHeight.text!)!
-            labelHeight.text = "高:\(height!)"
+            labelHeight.text != nil
+        {
+            top = Int(textFeildTop.text!)
+            if let temp = top
+            {
+            labelTop.text = "上底:\(temp)"
+            }
+            botton = Int(textFeildBotton.text!)
+            if let temp = botton{
+            labelBotton.text = "下底:\(temp)"
+            }
+            height = Int(textFeildHeight.text!)
+            if let temp = height{
+            labelHeight.text = "高:\(temp)"
+            }
         }
-        if top != nil && botton != nil && height != nil{
-        let plus = top! + botton!
-        let areaX2 = height! * plus
-        let area = areaX2 / 2
-        labelTotal.text = "總和: \(String(area))"
+        
+        guard textFeildTop.text == "" && textFeildBotton.text == "" && textFeildHeight.text == "" else{
+            let plus = Int(textFeildTop.text!)! + Int(textFeildBotton.text!)!
+            let areaX2 = Int(textFeildHeight.text!)! * plus
+            let area = areaX2 / 2
+            labelTotal.text = "總和: \(String(area))"
+            return
         }
-        else{
             labelTotal.text = "必須輸入上底下底及高才能計算"
-        }
+        
+        
+        
+        
+        
+//        if top != nil && botton != nil && height != nil{
+//        let plus = top! + botton!
+//        let areaX2 = height! * plus
+//        let area = areaX2 / 2
+//        labelTotal.text = "總和: \(String(area))"
+//        }
+//        else{
+//            labelTotal.text = "必須輸入上底下底及高才能計算"
+//        }
     }
 }
 
